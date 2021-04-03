@@ -30,6 +30,10 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="catatan_add">Catatan</label>
+                    <textarea name="catatan" id="catatan_add" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
                     <label for="password_add" class="col-form-label">Password</label>
                     <input type="text" name="password" class="form-control form-control-sm required" id="password_add">
                 </div>
@@ -84,6 +88,10 @@
                         <option value="4">Soal 4</option>
                         <option value="5">Soal 5</option> -->
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="catatan_edit">Catatan</label>
+                    <textarea name="catatan" id="catatan_edit" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="password_edit" class="col-form-label">Password</label>

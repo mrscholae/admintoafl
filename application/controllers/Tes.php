@@ -134,6 +134,7 @@ class Tes extends CI_Controller {
                 "tgl_tes" => $this->input->post("tgl_tes"),
                 "tgl_pengumuman" => $this->input->post("tgl_pengumuman"),
                 "tipe_soal" => $this->input->post("tipe_soal"),
+                "catatan" => $this->input->post("catatan"),
                 "password" => $this->input->post("password"),
                 "status" => "Berjalan",
             ];
@@ -165,6 +166,7 @@ class Tes extends CI_Controller {
                 "tgl_pengumuman" => $this->input->post("tgl_pengumuman"),
                 "tipe_soal" => $this->input->post("tipe_soal"),
                 "password" => $this->input->post("password"),
+                "catatan" => $this->input->post("catatan"),
                 "status" => $this->input->post("status"),
             ];
 
