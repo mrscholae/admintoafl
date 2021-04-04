@@ -792,10 +792,12 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($respon as $i => $respon) :?>
+            <?php 
+                $no = $this->uri->segment('4') + 1;
+                foreach ($respon as $i => $respon) :?>
                 <?php $skor = ((istima($respon['nilai_istima']) + tarakib($respon['nilai_tarakib']) + qiroah($respon['nilai_qiroah'])) * 10) / 3;?>
                 <tr>
-                    <td style="padding: 10px"><?= $i+1?></td>
+                    <td style="padding: 10px"><?= $no++?></td>
                     <td style="padding: 10px"><?= ucwords(strtolower($respon['nama']))?></td>
                     <td style="padding: 10px"><?= ucwords(strtolower($respon['t4_lahir'])) . ", " . tgl_indo(date("d-m-Y", strtotime($respon['tgl_lahir'])))?></td>
                     <td style="padding: 10px"><?= ucwords(strtolower($respon['alamat']))?></td>
@@ -821,5 +823,8 @@
             <?php endforeach;?>
         </tbody>
     </table>
+    <?php 
+	    echo $this->pagination->create_links();
+	?>
 </body>
 </html>
