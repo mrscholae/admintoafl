@@ -36,7 +36,7 @@ class Tes extends CI_Controller {
         
         // javascript 
         $data['js'] = [
-            "modules/other.js", 
+            "modules/other.js",
             "modules/tes.js",
             "load_data/reload_tes.js",
         ];
@@ -44,6 +44,21 @@ class Tes extends CI_Controller {
         $this->load->view("pages/tes/list-tes", $data);
     }
 
+    public function soal($id){
+        if($id == 1){
+            $data['istima'] = $this->Soal_model->get_soal_istimav1();
+            $data['tarakib'] = $this->Soal_model->get_soal_tarakibv1();
+            $data['qiroah'] = $this->Soal_model->get_soal_qiroahv1();
+        } else if($id == 2){
+            $data['istima'] = $this->Soal_model->get_soal_istimav2();
+            $data['tarakib'] = $this->Soal_model->get_soal_tarakibv2();
+            $data['qiroah'] = $this->Soal_model->get_soal_qiroahv2();
+        }
+
+        // $this->load->view("pages/layout/header-user", $data);
+        $this->load->view("pages/soal/soal-toafl-", $data);
+        // $this->load->view("pages/layout/footer-user");
+    }
     // public function hasil($id){
     //     // navbar and sidebar
     //     $data['menu'] = "Tes";
@@ -159,6 +174,7 @@ class Tes extends CI_Controller {
                 "tgl_tes" => $this->input->post("tgl_tes"),
                 "tgl_pengumuman" => $this->input->post("tgl_pengumuman"),
                 "tipe_soal" => $this->input->post("tipe_soal"),
+                "waktu" => $this->input->post("waktu"),
                 "catatan" => $this->input->post("catatan"),
                 "password" => $this->input->post("password"),
                 "status" => "Berjalan",
@@ -190,6 +206,7 @@ class Tes extends CI_Controller {
                 "tgl_tes" => $this->input->post("tgl_tes"),
                 "tgl_pengumuman" => $this->input->post("tgl_pengumuman"),
                 "tipe_soal" => $this->input->post("tipe_soal"),
+                "waktu" => $this->input->post("waktu"),
                 "password" => $this->input->post("password"),
                 "catatan" => $this->input->post("catatan"),
                 "status" => $this->input->post("status"),
