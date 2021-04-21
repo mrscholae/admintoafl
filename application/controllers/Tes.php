@@ -84,6 +84,7 @@ class Tes extends CI_Controller {
         // for title and header 
         $data['title'] = "List Hasil Tes";
 
+        $tes = $this->Main_model->get_one("tes", ["md5(id_tes)" => $id]);
 		$jumlah_data = COUNT($this->Main_model->get_all("peserta_toafl", ["md5(id_tes)" => $id]));
 		
 		$config['base_url'] = base_url().'tes/hasil/'.$id.'/';
@@ -99,7 +100,11 @@ class Tes extends CI_Controller {
             $data['respon'][$i]['text'] = $jawaban;
         }
 
-        $this->load->view("pages/tes/hasil-tes", $data);
+        if($tes['tipe_soal'] == 4){
+            $this->load->view("pages/tes/hasil-tes-satu-sesi", $data);
+        } else {
+            $this->load->view("pages/tes/hasil-tes", $data);
+        }
     }
 
     public function loadRecord($rowno=0){

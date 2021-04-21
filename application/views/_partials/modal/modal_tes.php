@@ -25,8 +25,8 @@
                         <option value="1">Soal 1</option>
                         <option value="2">Soal 2</option>
                         <option value="3">Soal 3</option>
-                        <!-- <option value="4">Soal 4</option>
-                        <option value="5">Soal 5</option> -->
+                        <option value="4">Soal 4</option>
+                        <!-- <option value="5">Soal 5</option> -->
                     </select>
                 </div>
                 <div class="form-group">
@@ -89,8 +89,8 @@
                         <option value="1">Soal 1</option>
                         <option value="2">Soal 2</option>
                         <option value="3">Soal 3</option>
-                        <!-- <option value="4">Soal 4</option>
-                        <option value="5">Soal 5</option> -->
+                        <option value="4">Soal 4</option>
+                        <!-- <option value="5">Soal 5</option> -->
                     </select>
                 </div>
                 <div class="form-group">
