@@ -22,11 +22,11 @@
                     <label for="tipe_soal_add">Tipe Soal</label>
                     <select name="tipe_soal" id="tipe_soal_add" class="form-control form-control-sm required">
                         <option value="">Pilih Tipe Soal</option>
-                        <option value="1">Soal 1</option>
-                        <option value="2">Soal 2</option>
-                        <option value="3">Soal 3</option>
-                        <option value="4">Soal 4</option>
-                        <!-- <option value="5">Soal 5</option> -->
+                        <option value="1">Toafl 1</option>
+                        <option value="2">Toafl 2</option>
+                        <option value="3">Toafl 3</option>
+                        <option value="4">Try Out 1</option>
+                        <option value="5">Toafl 4</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -86,11 +86,11 @@
                     <label for="tipe_soal_edit">Tipe Soal</label>
                     <select name="tipe_soal" id="tipe_soal_edit" class="form-control form-control-sm required">
                         <option value="">Pilih Tipe Soal</option>
-                        <option value="1">Soal 1</option>
-                        <option value="2">Soal 2</option>
-                        <option value="3">Soal 3</option>
-                        <option value="4">Soal 4</option>
-                        <!-- <option value="5">Soal 5</option> -->
+                        <option value="1">Toafl 1</option>
+                        <option value="2">Toafl 2</option>
+                        <option value="3">Toafl 3</option>
+                        <option value="4">Try Out 1</option>
+                        <option value="5">Toafl 4</option>
                     </select>
                 </div>
                 <div class="form-group">
