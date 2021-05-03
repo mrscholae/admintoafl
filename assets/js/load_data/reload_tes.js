@@ -67,6 +67,7 @@ function createTable(data,sno){
                             aria-labelledby="dropdownMenuLink">
                             <div class="dropdown-header">Tes</div>
                             <a class="dropdown-item btnEditTes" href="#editTes" data-toggle="modal" data-id="`+data[index].id_tes+`">Edit</a>
+                            <a class="dropdown-item" target="_blank" href="`+url_base+`tes/list_peserta/`+data[index].id_tes+`">List Peserta</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item btnHapusTes" href="javascript:void(0)" data-id="`+data[index].id_tes+`">Hapus</a>
                         </div>
