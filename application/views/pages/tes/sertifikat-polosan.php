@@ -108,22 +108,22 @@
         }
 
         .qrcode{
-            /* background-color: red; */
+            /* background-color: yellow; */
             width: 210px;
 			position: absolute;
-            left: 130px;
-			top: 140px;
+            left: 273px;
+			/* top: 170px; */
+			top: 197px;
             font-size: 35px;
             word-spacing: 3px;
         }
 
         .nilai{
-            background-color: red;
+            /*background-color: yellow; */
             width: 210px;
 			position: absolute;
-            right: -30px;
-            /* right: -30px; */
-			top: 350px;
+            right: 55px;
+			top: 359px;
             font-size: 35px;
             font-family: 'cambria';
             /* direction: 'rtl'; */
@@ -131,12 +131,12 @@
         }
 
         .index{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             width: 210px;
 			position: absolute;
-            right: -30px;
-            /* right: -30px; */
-			top: 400px;
+            right: 55px;
+			top: 409px;
             font-size: 30px;
             font-family: 'arial';
             direction: 'rtl';
@@ -144,11 +144,13 @@
         }
 
         .nama{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             width: 430px;
 			position: absolute;
-            right: 365px;
-			top: 440px;
+            /*right: 485px;*/
+            right: 428px;
+			top: 425px;
             font-size: 32px;
             font-family: 'bodoni';
             direction: 'rtl';
@@ -156,11 +158,13 @@
         }
 
         .ttl{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             width: 430px;
 			position: absolute;
-            right: 365px;
-			top: 495px;
+            /*right: 485px;*/
+            right: 428px;
+			top: 481px;
             font-size: 25px;
             font-family: 'bodoni';
             direction: 'rtl';
@@ -168,11 +172,14 @@
         }
         
         .istima{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: blue; */
             width: 50px;
 			position: absolute;
-            right: 100px;
-			top: 461px;
+            /*right: 260px;*/
+            right: 234px;
+			/*top: 459px;*/
+			top: 466px;
             font-size: 18px;
             font-family: 'calibri';
             direction: 'rtl';
@@ -180,11 +187,13 @@
         }
         
         .tarakib{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             width: 50px;
 			position: absolute;
-            right: 100px;
-			top: 499px;
+            /*right: 260px;*/
+            right: 234px;
+			top: 505px;
             font-size: 18px;
             font-family: 'calibri';
             direction: 'rtl';
@@ -192,11 +201,13 @@
         }
         
         .qiroah{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             width: 50px;
 			position: absolute;
-            right: 100px;
-			top: 534px;
+            /*right: 260px;*/
+            right: 234px;
+			top: 539px;
             font-size: 18px;
             font-family: 'calibri';
             direction: 'rtl';
@@ -204,11 +215,12 @@
         }
 
         .tgl{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             /* width: 50px; */
 			position: absolute;
-            right: 80px;
-			top: 693px;
+            right: 188px;
+			top: 690px;
             font-size: 23px;
             font-family: 'arab';
             direction: 'rtl';
@@ -216,11 +228,12 @@
         }
 
         .no_doc{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             /* width: 50px; */
 			position: absolute;
-            right: 80px;
-			top: 734px;
+            right: 188px;
+			top: 730px;
             font-size: 16px;
             font-family: 'arab';
             direction: 'rtl';
@@ -228,16 +241,18 @@
         }
 
         .tgl_akhir{
-            background-color: red;
+            /* background-color: yellow; */
+            /*background-color: yellow; */
             /* width: 50px; */
 			position: absolute;
-            right: 80px;
-			top: 760px;
+            right: 188px;
+			top: 755px;
             font-size: 23px;
             font-family: 'arab';
             direction: 'rtl';
             word-spacing: 3px;
         }
+
 
         <?php if($tipe == "gambar") :?>
             @page :first {
@@ -254,7 +269,7 @@
         </div>
         <div class="nilai"><p style="text-align: center; margin: 0px">(<?= round($skor)?>)</p></div>
         <div class="index"><p style="text-align: center; margin: 0px"><?= $nilai?></p></div>
-        <div class="nama"><p style="text-align: center; margin: 0px"><?= $nama?></p></div>
+        <div class="nama"><p style="text-align: center; margin: 0px"><b><?= $nama?></b></p></div>
         <div class="ttl"><p style="text-align: center; margin: 0px"><?= $t4_lahir?>, <?= tgl_indo(date("d-m-Y", strtotime($tgl_lahir)))?></p></div>
         <div class="istima"><p style="text-align: center; margin: 0px"><?= $istima?></p></div>
         <div class="tarakib"><p style="text-align: center; margin: 0px"><?= $tarakib?></p></div>

@@ -261,37 +261,85 @@ class Tes extends CI_Controller {
         $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
         $fontData = $defaultFontConfig['fontdata'];
         
-        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L',
-        // , 'margin_top' => '43', 'margin_left' => '25', 'margin_right' => '25', 'margin_bottom' => '35',
-            'fontdata' => $fontData + [
-                'arab' => [
-                    'R' => 'trado.ttf',
-                    'useOTL' => 0xFF,
-                    'useKashida' => 75,
-                ],
-                'arial' => [
-                    'R' => 'arial.ttf',
-                    'useOTL' => 0xFF,
-                    'useKashida' => 75,
-                ],
-                'bodoni' => [
-                    'R' => 'BOD_R.TTF',
-                ],
-                'calibri' => [
-                    'R' => 'CALIBRI.TTF',
-                ],
-                'cambria' => [
-                    'R' => 'CAMBRIAB.TTF',
-                ]
-            ], 
-        ]);
+        // $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L',
+        // // , 'margin_top' => '43', 'margin_left' => '25', 'margin_right' => '25', 'margin_bottom' => '35',
+        //     'fontdata' => $fontData + [
+        //         'arab' => [
+        //             'R' => 'trado.ttf',
+        //             'useOTL' => 0xFF,
+        //             'useKashida' => 75,
+        //         ],
+        //         'arial' => [
+        //             'R' => 'arial.ttf',
+        //             'useOTL' => 0xFF,
+        //             'useKashida' => 75,
+        //         ],
+        //         'bodoni' => [
+        //             'R' => 'BOD_R.TTF',
+        //         ],
+        //         'calibri' => [
+        //             'R' => 'CALIBRI.TTF',
+        //         ],
+        //         'cambria' => [
+        //             'R' => 'CAMBRIAB.TTF',
+        //         ]
+        //     ], 
+        // ]);
     
         $peserta['tipe'] = $tipe;
         if($tipe == "gambar") {
+            $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 330], 'orientation' => 'L',
+            // , 'margin_top' => '43', 'margin_left' => '25', 'margin_right' => '25', 'margin_bottom' => '35',
+                'fontdata' => $fontData + [
+                    'arab' => [
+                        'R' => 'trado.ttf',
+                        'useOTL' => 0xFF,
+                        'useKashida' => 75,
+                    ],
+                    'arial' => [
+                        'R' => 'arial.ttf',
+                        'useOTL' => 0xFF,
+                        'useKashida' => 75,
+                    ],
+                    'bodoni' => [
+                        'R' => 'BOD_R.TTF',
+                    ],
+                    'calibri' => [
+                        'R' => 'CALIBRI.TTF',
+                    ],
+                    'cambria' => [
+                        'R' => 'CAMBRIAB.TTF',
+                    ]
+                ], 
+            ]);
             $mpdf->SetTitle("{$peserta['nama']}");
             $mpdf->WriteHTML($this->load->view('pages/tes/sertifikat', $peserta, TRUE));
             $mpdf->Output("{$peserta['nama']}.pdf", "I");
         } else {
+            $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'legal', 'orientation' => 'L',
+            // , 'margin_top' => '43', 'margin_left' => '25', 'margin_right' => '25', 'margin_bottom' => '35',
+                'fontdata' => $fontData + [
+                    'arab' => [
+                        'R' => 'trado.ttf',
+                        'useOTL' => 0xFF,
+                        'useKashida' => 75,
+                    ],
+                    'arial' => [
+                        'R' => 'arial.ttf',
+                        'useOTL' => 0xFF,
+                        'useKashida' => 75,
+                    ],
+                    'bodoni' => [
+                        'R' => 'BOD_R.TTF',
+                    ],
+                    'calibri' => [
+                        'R' => 'CALIBRI.TTF',
+                    ],
+                    'cambria' => [
+                        'R' => 'CAMBRIAB.TTF',
+                    ]
+                ], 
+            ]);
             $mpdf->SetTitle("{$peserta['nama']}");
             $mpdf->WriteHTML($this->load->view('pages/tes/sertifikat-polosan', $peserta, TRUE));
             $mpdf->Output("Polosan {$peserta['nama']}.pdf", "I");
@@ -351,7 +399,7 @@ class Tes extends CI_Controller {
     
             $image_name=$id.'.png'; //buat name dari qr code sesuai dengan nim
     
-            $params['data'] = "https://toafl.id/sertifikat/".md5($id); //data yang akan di jadikan QR CODE
+            $params['data'] = "https://toafl.id/sertifikat/no/".md5($id); //data yang akan di jadikan QR CODE
             $params['level'] = 'H'; //H=High
             $params['size'] = 10;
             $params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
