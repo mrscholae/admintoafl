@@ -60,7 +60,9 @@ class Tes extends CI_Controller {
         // $this->load->view("pages/layout/footer-user");
     }
     
-    public function list_peserta(){
+    public function list_peserta($id){
+        $data['id'] = $id;
+
         // navbar and sidebar
         $data['menu'] = "Tes";
 
@@ -78,6 +80,56 @@ class Tes extends CI_Controller {
         ];
 
         $this->load->view("pages/tes/hasil_tes", $data);
+    }
+
+    public function list_hard($id){
+        // navbar and sidebar
+        $data['menu'] = "Tes";
+
+        // for title and header 
+        $data['title'] = "List Sertifikat Hard Copy";
+
+		$jumlah_data = COUNT($this->Main_model->get_all("peserta_toafl", ["id_tes" => $id, "sertifikat" => "Hard File"]));
+		
+		$config['base_url'] = base_url().'tes/list_hard/'.$id.'/';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 600;
+		$from = $this->uri->segment(4);
+		$this->pagination->initialize($config);
+        $respon = $this->Main_model->get_all_limit("peserta_toafl", ["id_tes" => $id, "sertifikat" => "Hard File"], "", "", $from, $config['per_page']);
+        $data['respon'] = [];
+        foreach ($respon as $i => $respon) {
+            $data['respon'][$i] = $respon;
+            $jawaban = explode("###", $respon['text']);
+            $data['respon'][$i]['text'] = $jawaban;
+        }
+
+        $this->load->view("pages/tes/hasil-tes", $data);
+    }
+
+    public function list_soft($id){
+        // navbar and sidebar
+        $data['menu'] = "Tes";
+
+        // for title and header 
+        $data['title'] = "List Sertifikat Soft Copy";
+
+		$jumlah_data = COUNT($this->Main_model->get_all("peserta_toafl", ["id_tes" => $id, "sertifikat" => "Soft File"]));
+		
+		$config['base_url'] = base_url().'tes/list_hard/'.$id.'/';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 600;
+		$from = $this->uri->segment(4);
+		$this->pagination->initialize($config);
+        $respon = $this->Main_model->get_all_limit("peserta_toafl", ["id_tes" => $id, "sertifikat" => "Soft File"], "", "", $from, $config['per_page']);
+        $data['respon'] = [];
+        foreach ($respon as $i => $respon) {
+            $data['respon'][$i] = $respon;
+            $jawaban = explode("###", $respon['text']);
+            $data['respon'][$i]['text'] = $jawaban;
+        }
+
+        $this->load->view("pages/tes/hasil-tes", $data);
     }
 
     public function hasil($id){
