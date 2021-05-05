@@ -20,7 +20,7 @@ class Tes_model extends CI_Model {
     }
 
     private function _get_datatables_tes($id_tes){
-        $column_order = array(null, 'nama', null, 'sertifikat'); //set column field database for datatable orderable
+        $column_order = array(null, 'nama', 'nilai_istima', 'nilai_tarakib', 'nilai_qiroah', null, 'sertifikat', null, null, null, null); //set column field database for datatable orderable
         $column_search = array('nama', 'sertifikat'); //set column field database for datatable searchable 
         $order = array('nama' => 'asc'); // default order 
 

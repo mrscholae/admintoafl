@@ -143,6 +143,14 @@
                     <input type="date" name="tgl_lahir" class="form form-control form-control-sm required">
                 </div>
                 <div class="form-group">
+                    <label>No. WA</label>
+                    <input type="text" name="no_wa" class="form form-control form-control-sm required">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form form-control form-control-sm required">
+                </div>
+                <div class="form-group">
                     <label>Alamat Sertifikat</label>
                     <textarea name="alamat" class="form form-control"></textarea>
                 </div>
