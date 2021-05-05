@@ -29,6 +29,10 @@ class Home extends CI_Controller {
         // $this->load->view("pages/index", $data);
     }
 
+    public  function scan(){
+        $this->load->view("pages/scan");
+    }
+
 }
 
 /* End of file Home.php */
