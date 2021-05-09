@@ -9,7 +9,8 @@
   
     <h1>JQuery HTML5 QR Code Scanner using Instascan JS Example - Medikre.com</h1>
     
-    <video id="preview"></video>
+    <!-- <video id="preview"></video> -->
+    <video playsinline controls="true" id="preview"></video>
     <script type="text/javascript">
       let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
       scanner.addListener('scan', function (content) {
