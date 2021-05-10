@@ -240,7 +240,7 @@ class Tes extends CI_Controller {
             $row[] = '<center>'.$no.'</center>';
 
             $url = base_url();
-            $row[] = "<a href='#uploadGambar' class='uploadGambar' data-toggle='modal' data-id='{$peserta->id}'><img src='{$url}assets/foto/{$peserta->file}' width='25'></a>".ucwords(strtolower($peserta->nama));
+            $row[] = "<a href='#uploadGambar' class='uploadGambar' data-toggle='modal' data-id='{$peserta->id}'><img src='{$url}assets/foto/{$peserta->file}' width='25'></a>".$peserta->nama;
 
             // skor 
             $skor = round((($this->istima($peserta->nilai_istima) + $this->tarakib($peserta->nilai_tarakib) + $this->qiroah($peserta->nilai_qiroah)) * 10) / 3);
@@ -285,7 +285,7 @@ class Tes extends CI_Controller {
     public function sertifikat($tipe, $id){
         $peserta = $this->Main_model->get_one("peserta_toafl", ["md5(id)" => $id]);
         $tes = $this->Main_model->get_one("tes", ["id_tes" => $peserta['id_tes']]);
-        $peserta['nama'] = ucwords(strtolower($peserta['nama']));
+        $peserta['nama'] = $peserta['nama'];
         $peserta['t4_lahir'] = ucwords(strtolower($peserta['t4_lahir']));
         $peserta['tahun'] = date('Y', strtotime($tes['tgl_tes']));
         $peserta['bulan'] = $this->getRomawi(date('m', strtotime($tes['tgl_tes'])));
