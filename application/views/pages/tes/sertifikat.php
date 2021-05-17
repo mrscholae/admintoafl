@@ -145,9 +145,11 @@
 
         .nama{
             /* background-color: red; */
-            width: 430px;
+            /* width: 450px; */
+            width: 610px;
 			position: absolute;
-            right: 425px;
+            right: 338px;
+            /* right: 425px; */
 			top: 410px;
             font-size: 32px;
             font-family: 'bodoni';
