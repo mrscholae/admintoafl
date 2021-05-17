@@ -27,6 +27,11 @@
                         <option value="3">Toafl 3</option>
                         <option value="4">Try Out 1</option>
                         <option value="5">Toafl 4</option>
+                        <option value="6">Try Out 2</option>
+                        <option value="7">Try Out 3</option>
+                        <option value="8">Try Out 4</option>
+                        <option value="9">Try Out 5</option>
+                        <option value="10">Toafl 5</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -91,6 +96,11 @@
                         <option value="3">Toafl 3</option>
                         <option value="4">Try Out 1</option>
                         <option value="5">Toafl 4</option>
+                        <option value="6">Try Out 2</option>
+                        <option value="7">Try Out 3</option>
+                        <option value="8">Try Out 4</option>
+                        <option value="9">Try Out 5</option>
+                        <option value="10">Toafl 5</option>
                     </select>
                 </div>
                 <div class="form-group">
